@@ -22,11 +22,14 @@ header {
 
 nav {
   display: flex;
+  justify-content: space-around;
+  align-items: center;
   gap: 20px;
   font-family: 'Maven Pro', sans-serif;
   font-size: 0.8rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
+  width: 15vw;
 }
 
 a {
