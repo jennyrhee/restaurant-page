@@ -9,10 +9,11 @@ function createDiv(content = null, className = null) {
   return div;
 }
 
-function createLink(name, href) {
+function createLink(name, href, className = null) {
   const link = document.createElement('a');
   link.href = href;
   link.textContent = name;
+  if (className) link.classList.add(className);
 
   return link;
 }
@@ -28,12 +29,12 @@ function createHeader() {
   const header = document.createElement('header');
   header.appendChild(createNav(
     ['Menu', 'Contact'],
-    ['/menu/', '/contact/']
+    ['#menu', '#contact']
   ));
-  header.appendChild(createDiv('Ristorante Sutton', 'logo'));
+  header.appendChild(createLink('Ristorante Sutton', '/', 'logo'));
   header.appendChild(createNav(
     ['Reservations', 'Order Now'],
-    ['/reserve/', '/order/']
+    ['#reserve', '#order']
   ));
 
   return header;
