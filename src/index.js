@@ -1,1 +1,3 @@
-console.log('Hello');
+import initialize from './home.js';
+
+initialize();
