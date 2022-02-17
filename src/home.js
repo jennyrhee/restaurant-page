@@ -1,44 +1,5 @@
+import {createDiv} from './helper.js';
 import Hero from './img/pasta.jpg';
-import './style.css';
-
-function createDiv(content = null, className = null) {
-  const div = document.createElement('div');
-  if (className) div.classList.add(className);
-  if (content) div.textContent = content;
-
-  return div;
-}
-
-function createLink(name, href, className = null) {
-  const link = document.createElement('a');
-  link.href = href;
-  link.textContent = name;
-  if (className) link.classList.add(className);
-
-  return link;
-}
-
-function createNav(names, hrefs) {
-  const nav = document.createElement('nav');
-  names.forEach((name, i) => nav.appendChild(createLink(name, hrefs[i])));
-
-  return nav;
-}
-
-function createHeader() {
-  const header = document.createElement('header');
-  header.appendChild(createNav(
-    ['Menu', 'Contact'],
-    ['#menu', '#contact']
-  ));
-  header.appendChild(createLink('Ristorante Sutton', '/', 'logo'));
-  header.appendChild(createNav(
-    ['Reservations', 'Order Now'],
-    ['#reserve', '#order']
-  ));
-
-  return header;
-}
 
 function createHero() {
   const hero = new Image();
@@ -64,42 +25,11 @@ function createDescription() {
   return container;
 }
 
-function createFooter() {
-  const footer = document.createElement('footer');
-
-  const p = document.createElement('p');
-  p.textContent = 'Created by '
-
-  const icon = document.createElement('i');
-  icon.classList.add('fa');
-  icon.classList.add('fa-github');
-
-  const github = document.createElement('a');
-  github.href = 'https://github.com/jennyrhee';
-  github.textContent = ' jennyrhee'
-
-  const span = document.createElement('span');
-  span.textContent = ' | ';
-
-  const repo = document.createElement('a');
-  repo.href = 'https://github.com/jennyrhee/restaurant-page';
-  repo.textContent = 'Repo';
-
-  p.appendChild(icon);
-  p.appendChild(github);
-  p.appendChild(span);
-  p.appendChild(repo);
-  footer.appendChild(p);
-  
-  return footer;
+function loadHome() {
+  const body = document.querySelector('.body');
+  body.textContent = '';
+  body.appendChild(createHero());
+  body.appendChild(createDescription());
 }
 
-function initialize() {
-  const content = document.getElementById('content');
-  content.appendChild(createHeader());
-  content.appendChild(createHero());
-  content.appendChild(createDescription());
-  content.appendChild(createFooter());
-}
-
-export default initialize;
+export default loadHome;
