@@ -9,10 +9,32 @@ function createDiv(content = null, className = null) {
   return div;
 }
 
+function createLink(name, href) {
+  const link = document.createElement('a');
+  link.href = href;
+  link.textContent = name;
+
+  return link;
+}
+
+function createNav(names, hrefs) {
+  const nav = document.createElement('nav');
+  names.forEach((name, i) => nav.appendChild(createLink(name, hrefs[i])));
+
+  return nav;
+}
+
 function createHeader() {
   const header = document.createElement('header');
-  const logo = createDiv('Ristorante Sutton', 'logo');
-  header.appendChild(logo);
+  header.appendChild(createNav(
+    ['Menu', 'Contact'],
+    ['/menu/', '/contact/']
+  ));
+  header.appendChild(createDiv('Ristorante Sutton', 'logo'));
+  header.appendChild(createNav(
+    ['Reservations', 'Order Now'],
+    ['/reserve/', '/order/']
+  ));
 
   return header;
 }
@@ -26,7 +48,7 @@ function createHero() {
 }
 
 function createDescription() {
-  const container = createDiv(null, 'container');
+  const container = createDiv(null, 'description-container');
   container.appendChild(createDiv(
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod \
     tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim \
