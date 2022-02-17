@@ -6,6 +6,12 @@
   box-sizing: border-box;
 }
 
+#content {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 header {
  display: flex;
  justify-content: space-between;
@@ -33,6 +39,10 @@ a {
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 0.2em;
+}
+
+.body {
+  flex: 1;
 }
 
 .hero {
