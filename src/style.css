@@ -33,6 +33,10 @@ a {
   color: inherit;
 }
 
+.nav-link.active {
+  text-decoration: underline;
+}
+
 .logo {
   font-family: 'Barlow Condensed', sans-serif;
   font-size: 2rem;

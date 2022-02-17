@@ -1,13 +1,22 @@
+import './style.css';
 import {createLink} from './helper.js';
 import loadHome from './home.js';
-import './style.css';
+
+function setActiveLink(target) {
+  const navLinks = document.querySelectorAll('.nav-link');
+  navLinks.forEach(link => link.classList.remove('active'));
+  target.classList.add('active');
+}
 
 function createNav(names, hrefs) {
   const nav = document.createElement('nav');
-  names.forEach((name, i) => nav.appendChild(
-    createLink(name, hrefs[i])
-  ));
-
+  names.forEach((name, i) => {
+    const link = createLink(name, hrefs[i], 'nav-link');
+    link.addEventListener('click', (e) => {
+      setActiveLink(e.target);
+    });
+    nav.appendChild(link);
+  });
   return nav;
 }
 
