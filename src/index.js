@@ -1,6 +1,7 @@
 import './css/style.css';
 import {createLink} from './helper.js';
 import loadHome from './home.js';
+import loadMenu from './menu.js';
 
 function setActiveLink(target) {
   const navLinks = document.querySelectorAll('.nav-link');
@@ -14,6 +15,8 @@ function createNav(names, hrefs) {
     const link = createLink(name, hrefs[i], 'nav-link');
     link.addEventListener('click', (e) => {
       setActiveLink(e.target);
+      if (e.target.textContent === 'Menu') loadMenu();
+      else if (e.target.textContent === 'Contact') pass;
     });
     nav.appendChild(link);
   });
