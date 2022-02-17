@@ -1,4 +1,4 @@
-import './style.css';
+import './css/style.css';
 import {createLink} from './helper.js';
 import loadHome from './home.js';
 
