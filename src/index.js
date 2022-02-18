@@ -29,7 +29,7 @@ function createHeader() {
     ['Menu', 'Contact'],
     ['#menu', '#contact']
   ));
-  header.appendChild(createLink('Ristorante Sutton', '/', 'logo'));
+  header.appendChild(createLink('Ristorante Sutton', '/restaurant-page', 'logo'));
   header.appendChild(createNav(
     ['Reservations', 'Order Now'],
     ['#reserve', '#order']
