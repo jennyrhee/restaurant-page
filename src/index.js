@@ -16,7 +16,7 @@ function createNav(names, hrefs) {
     link.addEventListener('click', (e) => {
       setActiveLink(e.target);
       if (e.target.textContent === 'Menu') loadMenu();
-      else if (e.target.textContent === 'Contact') pass;
+      else if (e.target.textContent === 'Contact') loadHome();
     });
     nav.appendChild(link);
   });
