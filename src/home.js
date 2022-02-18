@@ -1,9 +1,10 @@
 import {createDiv} from './helper.js';
 import Hero from './img/pasta.jpg';
+import Dough from './img/dough.jpg';
 
-function createHero() {
+function createHero(img) {
   const hero = new Image();
-  hero.src = Hero;
+  hero.src = img;
   hero.classList.add('hero');
 
   return hero;
@@ -28,8 +29,9 @@ function createDescription() {
 function loadHome() {
   const body = document.querySelector('.body');
   body.textContent = '';
-  body.appendChild(createHero());
+  body.appendChild(createHero(Hero));
   body.appendChild(createDescription());
+  body.appendChild(createHero(Dough));
 }
 
 export default loadHome;
